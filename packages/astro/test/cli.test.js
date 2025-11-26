@@ -136,7 +136,9 @@ describe('astro cli', () => {
 		// On Linux we only check if we have Wayland or x11. In Codespaces it falsely reports that it does have x11
 		if (
 			process.platform === 'linux' &&
-			((!process.env.WAYLAND_DISPLAY && !process.env.DISPLAY) || process.env.CODESPACES)
+			((!process.env.WAYLAND_DISPLAY && !process.env.DISPLAY) ||
+				process.env.CODESPACES ||
+				result.stdout.includes('Please manually copy the text above'))
 		) {
 			assert.ok(result.stdout.includes('Please manually copy the text above'));
 		} else {

@@ -7,8 +7,11 @@
       "type": "extensionHost",
       "request": "launch",
       "runtimeExecutable": "${execPath}",
-      "args": ["--extensionDevelopmentPath=${workspaceRoot}/tools/vscode"],
-      "outFiles": ["${workspaceRoot}/tools/vscode/dist/**/*.js"]
+      "args": [
+        "${workspaceRoot}/examples/framework-svelte",
+        "--extensionDevelopmentPath=${workspaceRoot}/packages/language-tools/vscode"
+      ],
+      "outFiles": ["${workspaceRoot}/packages/language-tools/vscode/dist/**/*.js"]
     },
     {
       "type": "node",
@@ -16,7 +19,7 @@
       "name": "Attach to Server",
       "port": 6040,
       "restart": true,
-      "outFiles": ["${workspaceRoot}/tools/languageserver/dist/**/*.js"],
+      "outFiles": ["${workspaceRoot}/packages/language-tools/language-server/dist/**/*.js"],
       "skipFiles": ["<node_internals>/**"]
     }
   ],

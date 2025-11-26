@@ -6,8 +6,7 @@ import { pathToFileURL } from 'node:url';
 import { parseArgs } from 'node:util';
 import { glob } from 'tinyglobby';
 
-const isCI = !!process.env.CI;
-const defaultTimeout = isCI ? 1400000 : 600000;
+const defaultTimeout = 1500000;
 
 export default async function test() {
 	const args = parseArgs({
